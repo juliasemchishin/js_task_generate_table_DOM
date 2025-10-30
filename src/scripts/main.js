@@ -359,11 +359,8 @@ console.log(people); // you can remove it
 
 const table = document.querySelector('.dashboard tbody');
 
-let createTR;
-let createTD;
-
 for (const person of people) {
-  createTR = document.createElement('tr');
+  const createTR = document.createElement('tr');
 
   table.appendChild(createTR);
 
@@ -372,7 +369,7 @@ for (const person of people) {
       continue;
     }
 
-    createTD = document.createElement('td');
+    const createTD = document.createElement('td');
 
     if (key === 'sex') {
       createTD.textContent = person[key] === 'm' ? 'Male' : 'Female';
