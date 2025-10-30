@@ -364,21 +364,25 @@ for (const person of people) {
 
   table.appendChild(createTR);
 
-  for (const key in person) {
-    if (key === 'fatherName' || key === 'motherName' || key === 'slug') {
-      continue;
-    }
+  const nameCell = document.createElement('td');
 
-    const createTD = document.createElement('td');
+  nameCell.textContent = person.name;
+  createTR.appendChild(nameCell);
 
-    if (key === 'sex') {
-      createTD.textContent = person[key] === 'm' ? 'Male' : 'Female';
-    } else {
-      createTD.textContent = person[key];
-    }
+  const genderCell = document.createElement('td');
 
-    createTR.appendChild(createTD);
-  }
+  genderCell.textContent = person.sex === 'm' ? 'Male' : 'Female';
+  createTR.appendChild(genderCell);
+
+  const bornCell = document.createElement('td');
+
+  bornCell.textContent = person.born;
+  createTR.appendChild(bornCell);
+
+  const diedCell = document.createElement('td');
+
+  diedCell.textContent = person.died;
+  createTR.appendChild(diedCell);
 
   const age = person.died - person.born;
   const ageCell = document.createElement('td');
